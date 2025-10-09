@@ -30,3 +30,12 @@ let tenMovieList = [bigPineapple, someWarThing, herlockSholmes, lordOfTheFries, 
 
 console.log(tenMovieList);
 
+
+
+// Q4.3
+// Copy of 10 movie array sorted in ascending order by movieID
+let sortedMovieList = tenMovieList.toSorted(function(a, b) {
+  return a.movieID - b.movieID;
+})
+
+console.log(sortedMovieList);
