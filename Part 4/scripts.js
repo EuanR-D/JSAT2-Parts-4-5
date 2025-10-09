@@ -39,3 +39,29 @@ let sortedMovieList = tenMovieList.toSorted(function(a, b) {
 })
 
 console.log(sortedMovieList);
+
+
+
+// Q4.4
+// Creating a sequential search function to search through the movie list
+function sequentialSearch(array, targetID) {
+  // variable to return the movie object
+  // set to null as default for not found
+  let foundMovie = null;
+
+  // looping through the length of the array
+  for (let i = 0; i < array.length; i++) {
+    // checking if objects movieID at current position matches targetID
+    if (array[i].movieID == targetID) {
+      // Updating variable to movie and breaking loop
+      foundMovie = array[i];
+      break;
+    }
+  }
+  // Returning either movie object or null
+  return foundMovie;
+}
+// Searching for movieID that exists
+console.log(sequentialSearch(tenMovieList, 10));
+// Searching for movieID that doesnt exist
+console.log(sequentialSearch(tenMovieList, 11));
