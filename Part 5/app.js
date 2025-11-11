@@ -17,3 +17,33 @@ let initialMovies = [
 
 let movieList = new MovieList('list', initialMovies);
 
+function titleSearchClick() {
+
+  let formElements = document.getElementById('form-search').elements;
+
+  let titleStr = formElements['search-input'].value;
+
+  movieList.searchTitle(titleStr);
+}
+
+function idSearchClick() {
+
+}
+
+function refreshClick() {
+
+}
+
+function sortAZClick() {
+
+}
+
+function sortZAClick() {
+
+}
+
+function sortRatingClick() {
+
+}
+
+function addMovieClick() {}

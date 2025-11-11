@@ -178,6 +178,15 @@ class MovieList {
     this.refresh();
   }
 
+  addMovie(id, title, year, rating) {
+    this.movieList.push({
+      id: id,
+      title: title,
+      year: year,
+      rating: rating
+    });
 
+    this.refresh();
+  }
 
 }
