@@ -92,11 +92,11 @@ class MovieList {
   searchTitle(titleStr) {
     // Creating empty array to push results to if found
     let searchList = [];
-
+    
     // Converting input and title to lowercase for comparison
     let movieTitle = movie.title.toLowerCase();
     let searchedTitle = titleStr.toLowerCase();
-
+    
     // looping through each movie object from movie list array
     for (let movie of this.movieList) {
       // If partial/full input matches title, pushes movie to new array
@@ -105,17 +105,17 @@ class MovieList {
       }
       console.log(searchList);
     }
-
+    
     // Passes final search array to function to display it
     this.genMovieSearchList(searchList);
   }
-
+  
   // Search by ID function
   // compares input number to movie id and returns match
   searchId(idNum) {
     // Creating empty array to push results to if found
     let searchList = [];
-
+    
     // looping through each movie object from movie list array
     for (let movie of this.movieList) {
       // If input id matches current movie, pushes movie to new array
@@ -124,17 +124,17 @@ class MovieList {
       }
       console.log(searchList);
     }
-
+    
     // Passes final search array to function to display it
     this.genMovieSearchList(searchList);
   }
-
+  
   // Generate searched movie list
   // Generates list based on found search results
   genMovieSearchList(searchList) {
     // Removes all current movies from display
     this.removeElements();
-
+    
     // Loops through each movie in the list
     for (let i = 0; i < searchList.length; i++) {
       // Display current movie object in console
@@ -145,5 +145,39 @@ class MovieList {
       this.movieRow(movie.id, movie.title, movie.year, movie.rating);
     }
   }
+
+  // Refresh list function
+  // Removes all elements and displays full movie array list
+  refresh() {
+    // remove all elements
+    this.removeElements();
+
+    // generate display from movies array
+    this.genMovieList();
+  }
+  
+  sortAZ() {
+    this.movieList.sort(function(a,b) {
+      return a.title.localeCompare(b.title);
+    })
+    this.refresh();
+  }
+  
+  sortZA() {
+    this.movieList.sort(function(a,b) {
+      return b.title.localeCompare(a.title);
+    })
+    this.refresh();
+  }
+  
+  sortRating() {
+    this.movieList.sort(function(a, b) {
+      return a.rating - b.rating;
+    })
+
+    this.refresh();
+  }
+
+
 
 }
