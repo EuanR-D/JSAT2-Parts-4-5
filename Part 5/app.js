@@ -15,35 +15,74 @@ let initialMovies = [
   {id: 5, title: "Bad Fellas", year: 1991, rating: 9.9}
 ];
 
+// creating a movielist instance using the array and tbody id
 let movieList = new MovieList('list', initialMovies);
 
+// Upon clicking the Search by Title button
 function titleSearchClick() {
-
+  // gets child elements from form
   let formElements = document.getElementById('form-search').elements;
 
+  // assigns value of input to variable
   let titleStr = formElements['search-input'].value;
 
+  // calls searchId function using input as parameter
   movieList.searchTitle(titleStr);
 }
 
+// Upon clicking the Search by ID button
 function idSearchClick() {
+  // gets child elements from form
+  let formElements = document.getElementById('form-search').elements;
 
+  // assigns value of input to variable
+  let idNum = formElements['search-input'].value;
+
+  // calls searchId function using input as parameter
+  movieList.searchId(idNum);
 }
 
+// Upon clicking the Refresh button
 function refreshClick() {
-
+  // calls sort ID for current movie list class
+  movieList.sortID();
 }
 
+// Upon clicking the Sort by A-Z button
 function sortAZClick() {
-
+  // calls sort AZ for current movie list class
+  movieList.sortAZ();
 }
 
+// Upon clicking the Sort by Z-A button
 function sortZAClick() {
-
+  // calls sort ZA for current movie list class
+  movieList.sortZA();
 }
 
+// Upon clicking the Sort by Best button
 function sortRatingClick() {
-
+  // calls sort by rating for current movie list class
+  movieList.sortRating();
 }
 
-function addMovieClick() {}
+// Upon clicking the Add movie button on page
+function addMovieClick() {
+  // gets form from DOM and all its child elements
+  let formElements = document.getElementById('add-form').elements;
+
+  // assigns values from each input to a variable
+  let id = formElements['id'].value;
+  let title = formElements['title'].value;
+  let year = formElements['year'].value;
+  let rating = formElements['rating'].value;
+
+  // calls addMovie using input values as parameters
+  movieList.addMovie(Number(id), title, Number(year), Number(rating));
+
+  // clears each form input to blank
+  formElements.id.value = "";
+  formElements.title.value = "";
+  formElements.year.value = "";
+  formElements.rating.value = "";
+}

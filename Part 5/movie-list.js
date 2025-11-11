@@ -58,13 +58,12 @@ class MovieList {
   genMovieList() {
 
     // Loop through the array
-    for (let i = 0; i < this.movieList.length; i++) {
+    for (let i = 0; i < this.movieArray.length; i++) {
       // Displaying current movie object in the console
-      let movie = this.movieList[i];
-      console.log(movie);
+      let movie = this.movieArray[i];
 
       // Running movieRow function with the movie objects properties
-      this.movieRow(movie.id, movie.title, movie.year, movie,rating);
+      this.movieRow(movie.id, movie.title, movie.year, movie.rating);
     }
   }
 
@@ -93,18 +92,16 @@ class MovieList {
     // Creating empty array to push results to if found
     let searchList = [];
     
-    // Converting input and title to lowercase for comparison
-    let movieTitle = movie.title.toLowerCase();
-    let searchedTitle = titleStr.toLowerCase();
-    
     // looping through each movie object from movie list array
-    for (let movie of this.movieList) {
-      // If partial/full input matches title, pushes movie to new array
-      if (movieTitle.includes(searchedTitle)) {
+    for (let movie of this.movieArray) {
+
+      // Converting input and title to lowercase for comparison
+      if (movie.title.toLowerCase().includes(titleStr.toLowerCase())) {
+        // If partial/full input matches title, pushes movie to new array
         searchList.push(movie);
       }
-      console.log(searchList);
     }
+    
     
     // Passes final search array to function to display it
     this.genMovieSearchList(searchList);
@@ -117,12 +114,12 @@ class MovieList {
     let searchList = [];
     
     // looping through each movie object from movie list array
-    for (let movie of this.movieList) {
+    for (let movie of this.movieArray) {
       // If input id matches current movie, pushes movie to new array
       if (movie.id == idNum) {
         searchList.push(movie);
       }
-      console.log(searchList);
+      
     }
     
     // Passes final search array to function to display it
@@ -137,9 +134,8 @@ class MovieList {
     
     // Loops through each movie in the list
     for (let i = 0; i < searchList.length; i++) {
-      // Display current movie object in console
+      // Make current item and object variable
       let movie = searchList[i];
-      console.log(movie);
       
       // Run movie row function with objects properties
       this.movieRow(movie.id, movie.title, movie.year, movie.rating);
@@ -156,36 +152,66 @@ class MovieList {
     this.genMovieList();
   }
   
+  // Sort from A-Z function
+  // Displays the list by title in alphabetical order
   sortAZ() {
-    this.movieList.sort(function(a,b) {
+    // using a sort function that compares the title strings, and places them in alphabetical order
+    this.movieArray.sort(function(a,b) {
       return a.title.localeCompare(b.title);
     })
+
+    // refreshing the list to show the new order
     this.refresh();
   }
   
+  // Sort from Z-A function
+  // Displays the list by title in reverse alphabetical order
   sortZA() {
-    this.movieList.sort(function(a,b) {
+    // using a sort function that compares the title strings, and places them in reverse alphabetical order
+    this.movieArray.sort(function(a,b) {
       return b.title.localeCompare(a.title);
     })
+
+    // refreshing the list to show the new order
     this.refresh();
   }
   
+  // Sort rating function
+  // Displays the list by rating in descending order
   sortRating() {
-    this.movieList.sort(function(a, b) {
-      return a.rating - b.rating;
+    // using a sort function that compares the rating values, and places them in descending order
+    this.movieArray.sort(function(a, b) {
+      return b.rating - a.rating;
     })
 
+    // refreshing the list to show the new order
     this.refresh();
   }
 
+  // Sort ID function
+  // Displays the list by ID in ascending order
+  sortID() {
+    // using a sort function that compares the ID values, and places them in ascending order
+    this.movieArray.sort(function(a, b) {
+      return a.id - b.id;
+    })
+
+    // refreshing the list to show the new order
+    this.refresh();
+  }
+
+  // Add movie function
+  // Creates a new object into the movie array with the input values
   addMovie(id, title, year, rating) {
-    this.movieList.push({
+    // pushing a new object with the key/value pairs from the parameters
+    this.movieArray.push({
       id: id,
       title: title,
       year: year,
       rating: rating
     });
 
+    // refreshing the list to show the new movie
     this.refresh();
   }
 
