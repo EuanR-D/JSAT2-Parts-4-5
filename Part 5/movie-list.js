@@ -150,6 +150,8 @@ class MovieList {
 
     // generate display from movies array
     this.genMovieList();
+
+    this.updateInputId();
   }
   
   // Sort from A-Z function
@@ -213,6 +215,14 @@ class MovieList {
 
     // updating the list to show the new movie
     this.update();
+  }
+
+  updateInputId() {
+    let formId = document.getElementById('addId');
+
+    let nextId = this.movieArray.length + 1;
+
+    formId.value = nextId; 
   }
 
 }

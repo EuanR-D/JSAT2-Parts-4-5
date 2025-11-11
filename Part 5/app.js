@@ -81,7 +81,6 @@ function addMovieClick() {
   movieList.addMovie(Number(id), title, Number(year), Number(rating));
 
   // clears each form input to blank
-  formElements.id.value = "";
   formElements.title.value = "";
   formElements.year.value = "";
   formElements.rating.value = "";
