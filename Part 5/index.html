@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie List App</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <h1>Movie List</h1>
+  <!-- Search section -->
+  <section>
+    <h2>Search</h2>
+
+    <form id="form-search">
+      <div>
+        <input type="text" name="search-input" placeholder="Title or ID">
+      </div>
+      <div>
+        <button type="button" onclick="titleSearchClick()">Search by title</button>
+        <button type="button" onclick="idSearchClick()">Search by ID</button>
+      </div>
+    </form>
+
+  </section>
+  <!-- end search -->
+
+  <!-- Display movie section -->
+  <section id="list-display">
+    <h2>Display Movies</h2>
+
+    <!-- Refresh & Sort buttons -->
+    <div id="list-buttons">
+      <button type="button" onclick="refreshClick()">Refresh</button>
+      <button type="button" onclick="sortAZClick()">Sort A-Z</button>
+      <button type="button" onclick="sortZAClick()">Sort Z-A</button>
+      <button type="button" onclick="sortRatingClick()">Sort by best</button>
+    </div>
+    
+    <!-- List of movies -->
+    <table id="movie-list">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Year</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody id="list">
+        <tr class="movie-row">
+          <td>1.</td>
+          <td>Title.</td>
+          <td>Year.</td>
+          <td>Rating.</td>
+        </tr>
+        <tr class="movie-row">
+          <td>2.</td>
+          <td>Title.</td>
+          <td>Year.</td>
+          <td>Rating.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </section>
+  <!-- end display -->
+
+  <!-- Add movie section -->
+  <section id="add-movie">
+    <h2>Add Movie</h2>
+
+    <form id="add-form">
+      <div>
+        <label for="addId">ID: </label>
+        <input type="text" name="id" id="addId" readonly>
+      </div>
+      <div>
+        <label for="addTitle">Title: </label>
+        <input type="text" name="title" id="addTitle" placeholder="Movie title">
+      </div>
+      <div>
+        <label for="addYear">Year: </label>
+        <input type="text" name="year" id="addYear" placeholder="Release year">
+      </div>
+      <div>
+        <label for="addRating">Rating: </label>
+        <input type="text" name="rating" id="addRating" placeholder="Movie Rating">
+      </div>
+      <button type="button" name="submit" onclick="addMovieClick()">Add movie</button>
+    </form>
+  </section>
+  <!-- end add movie -->
+
+  <!-- Site JS scripts -->
+  <script src="./movie-list.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
