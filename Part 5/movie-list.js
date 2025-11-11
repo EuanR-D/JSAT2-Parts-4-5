@@ -18,7 +18,7 @@ class MovieList {
     // Array of movie objects
     this.movieArray = movieArray;
 
-    this.refresh();
+    this.update();
   }
 
   // Create movie row function
@@ -142,9 +142,9 @@ class MovieList {
     }
   }
 
-  // Refresh list function
+  // Update list function
   // Removes all elements and displays full movie array list
-  refresh() {
+  update() {
     // remove all elements
     this.removeElements();
 
@@ -160,8 +160,8 @@ class MovieList {
       return a.title.localeCompare(b.title);
     })
 
-    // refreshing the list to show the new order
-    this.refresh();
+    // updating the list to show the new order
+    this.update();
   }
   
   // Sort from Z-A function
@@ -172,8 +172,8 @@ class MovieList {
       return b.title.localeCompare(a.title);
     })
 
-    // refreshing the list to show the new order
-    this.refresh();
+    // updating the list to show the new order
+    this.update();
   }
   
   // Sort rating function
@@ -184,8 +184,8 @@ class MovieList {
       return b.rating - a.rating;
     })
 
-    // refreshing the list to show the new order
-    this.refresh();
+    // updating the list to show the new order
+    this.update();
   }
 
   // Sort ID function
@@ -196,8 +196,8 @@ class MovieList {
       return a.id - b.id;
     })
 
-    // refreshing the list to show the new order
-    this.refresh();
+    // updating the list to show the new order
+    this.update();
   }
 
   // Add movie function
@@ -211,8 +211,8 @@ class MovieList {
       rating: rating
     });
 
-    // refreshing the list to show the new movie
-    this.refresh();
+    // updating the list to show the new movie
+    this.update();
   }
 
 }
