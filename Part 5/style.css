@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inder&display=swap');
+
+:root {
+  --paleLavender: #E5D7F5;
+  --tropicViolet: #C2B0D6;
+  --paleViolet: #BE89FF;
+  --purpleTaupe:  #483C55;
+  --arsenic: #3E344B;
+  --russianViolet: #2E1B47;
+  --darkCharcoal: #322B3B;
+}
+
+* {
+  margin: 0;
+  font-family: Inder;
+}
+
+body {
+  background-color: var(--arsenic);
+}
+
+h1, h2, button {
+  color: var(--paleViolet);
+}
+
+label, th {
+  color: var(--paleLavender);
+  background-color: var(--purpleTaupe);
+}
+
+td {
+  color: var(--darkCharcoal);
+  background-color: var(--paleLavender);
+}
+
+button {
+  background-color: var(--russianViolet);
+}
+
+input {
+  background-color: var(--paleLavender);
+  &::placeholder {
+    color: red;
+  }
+}
