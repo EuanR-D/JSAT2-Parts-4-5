@@ -15,6 +15,34 @@
   font-family: Inder;
 }
 
+
+/* ####### Font sizes #######*/
+h1 {
+  font-size: 3.5em;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: 500;
+}
+
+th, label {
+  font-size: 1.3em;
+}
+
+td, input {
+  font-size: 1.1em;
+}
+
+button {
+  font-size: 1.3em;
+  padding: 5px;
+}
+
+
+
+/* ####### Colors & Borders ####### */
 body {
   background-color: var(--arsenic);
 }
@@ -26,20 +54,150 @@ h1, h2, button {
 label, th {
   color: var(--paleLavender);
   background-color: var(--purpleTaupe);
+  border: 1px solid var(--paleLavender);
+}
+
+th {
+  border-right: none;
+}
+
+#right-th {
+  border-right: 1px solid var(--paleLavender);
 }
 
 td {
   color: var(--darkCharcoal);
-  background-color: var(--paleLavender);
 }
 
 button {
   background-color: var(--russianViolet);
+  border: 1px solid var(--paleViolet);
 }
 
 input {
   background-color: var(--paleLavender);
+
   &::placeholder {
-    color: red;
+    color: hsla(from var(--darkCharcoal) h s l / 70%);
   }
 }
+
+#movie-list, #add-form {
+  background-color: var(--darkCharcoal);
+  border: 1px solid var(--paleLavender);
+}
+
+.movie-row:nth-child(odd) {
+  background-color: var(--tropicViolet);
+}
+
+.movie-row {
+  background-color: var(--paleLavender);
+}
+
+
+
+/* ####### Whole Body #######*/
+body {
+  margin: 0 16dvw;
+}
+
+h1 {
+  text-align: center;
+  padding: 10px 0;
+}
+
+section {
+  margin-bottom: 5dvh;
+}
+
+input {
+  padding-inline-start: 10px;
+}
+
+
+
+/* ####### Search section #######*/
+#form-search {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+#form-search input {
+  min-width: 350px;
+  height: 100%;
+  border: none;
+}
+
+#form-buttons {
+  display: flex;
+}
+
+#form-buttons button {
+  margin-left: 10px;
+  min-width: 165px;
+}
+
+
+
+/* ####### List section ####### */
+#list-top-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+#list-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+#list-buttons button {
+  min-width: 110px;
+  margin-left: 10px;
+}
+
+#movie-list {
+  margin-top: 2px;
+  padding: 10px;
+  min-width: 100%;
+  border-spacing: 0;
+}
+
+#movie-list th {
+  font-weight: 100;
+  padding: 5px 0;
+}
+
+#movie-list td {
+  padding: 6px 0;
+  text-align: center;
+}
+
+
+
+/* ####### Add section ####### */
+#add-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+.add-row {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+#add-form label {
+  min-width: 100px;
+  text-align: center;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+#add-form input {
+  min-width: 500px;
+  border: none;
+}
+
