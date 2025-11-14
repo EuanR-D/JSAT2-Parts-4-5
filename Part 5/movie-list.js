@@ -38,7 +38,7 @@ class MovieList {
     idElement.textContent = `${id}.`;
     titleElement.textContent = title;
     yearElement.textContent = year;
-    ratingElement.textContent = rating;
+    ratingElement.textContent = rating.toFixed(1);
 
     // Adding movie-row class to tr so its in tbody
     row.classList.add('movie-row');
