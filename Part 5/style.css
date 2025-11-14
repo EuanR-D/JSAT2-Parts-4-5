@@ -97,7 +97,7 @@ input {
 
 .content-container {
   background-color: var(--darkCharcoal);
-  border: 2px solid var(--paleLavender);
+  border: 1px solid var(--paleLavender);
 
   scrollbar-color: var(--purpleTaupe) var(--paleLavender);
 }
@@ -178,8 +178,9 @@ button {
 }
 
 #list-display .content-container {
-  max-height: 40dvh;
+  max-height: 32dvh;
   overflow-y: auto;
+  margin-top: 5px;
 }
 
 #movie-list {
@@ -187,7 +188,11 @@ button {
   padding: 10px;
   min-width: 100%;
   border-spacing: 0;
+  table-layout: fixed;
+}
 
+th:nth-child(4), th:nth-child(3) {
+  width: 18%;
 }
 
 #movie-list th {
@@ -203,6 +208,10 @@ button {
 
 
 /* ####### Add section ####### */
+#add-movie .content-container {
+  margin-top: 5px;
+}
+
 #add-form {
   display: flex;
   flex-direction: column;
