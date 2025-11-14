@@ -2,7 +2,7 @@
 // Desc: contains default array and lets methods interact with DOM. For JSAT2 Part 5
 // Author: Euan Renfrey-Douglas
 // Date created: 2025-11-11
-// Last modified: 2025-11-11
+// Last modified: 2025-11-14
 
 
 
@@ -90,7 +90,7 @@ function addMovieClick() {
   else if (rating > 10 || rating < 0) {
     return alert("Rating must be between 0 and 10")
   }
-  
+
   // calls addMovie using input values as parameters
   movieList.addMovie(Number(id), title, Number(year), Number(rating));
 
