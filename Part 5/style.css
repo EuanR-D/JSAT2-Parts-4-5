@@ -37,7 +37,6 @@ td, input {
 
 button {
   font-size: 1.3em;
-  padding: 5px;
 }
 
 
@@ -72,6 +71,16 @@ td {
 button {
   background-color: var(--russianViolet);
   border: 1px solid var(--paleViolet);
+
+  &:hover {
+    cursor: pointer;
+    background-color: hsl(from var(--russianViolet) h s 25%);
+  }
+
+  &:focus {
+    background-color: hsl(from var(--russianViolet) h s 25%);
+    outline: none;
+  }
 }
 
 input {
@@ -80,11 +89,17 @@ input {
   &::placeholder {
     color: hsla(from var(--darkCharcoal) h s l / 70%);
   }
+
+  &:focus {
+    outline: 3px solid var(--paleViolet);
+  }
 }
 
-#movie-list, #add-form {
+.content-container {
   background-color: var(--darkCharcoal);
-  border: 1px solid var(--paleLavender);
+  border: 2px solid var(--paleLavender);
+
+  scrollbar-color: var(--purpleTaupe) var(--paleLavender);
 }
 
 .movie-row:nth-child(odd) {
@@ -112,7 +127,12 @@ section {
 }
 
 input {
+  padding: 0;
   padding-inline-start: 10px;
+}
+
+button {
+  padding: 5px;
 }
 
 
@@ -157,11 +177,17 @@ input {
   margin-left: 10px;
 }
 
+#list-display .content-container {
+  max-height: 40dvh;
+  overflow-y: auto;
+}
+
 #movie-list {
   margin-top: 2px;
   padding: 10px;
   min-width: 100%;
   border-spacing: 0;
+
 }
 
 #movie-list th {

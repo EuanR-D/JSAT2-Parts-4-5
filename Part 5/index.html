@@ -40,30 +40,32 @@
     </div>
 
     <!-- List of movies -->
-    <table id="movie-list">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Title</th>
-          <th>Year</th>
-          <th id="right-th">Rating</th>
-        </tr>
-      </thead>
-      <tbody id="list">
-        <tr class="movie-row">
-          <td>1.</td>
-          <td>Title.</td>
-          <td>Year.</td>
-          <td>Rating.</td>
-        </tr>
-        <tr class="movie-row">
-          <td>2.</td>
-          <td>Title.</td>
-          <td>Year.</td>
-          <td>Rating.</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="content-container">
+      <table id="movie-list">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Year</th>
+            <th id="right-th">Rating</th>
+          </tr>
+        </thead>
+        <tbody id="list">
+          <tr class="movie-row">
+            <td>1.</td>
+            <td>Title.</td>
+            <td>Year.</td>
+            <td>Rating.</td>
+          </tr>
+          <tr class="movie-row">
+            <td>2.</td>
+            <td>Title.</td>
+            <td>Year.</td>
+            <td>Rating.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
   </section>
   <!-- end display -->
@@ -71,26 +73,28 @@
   <!-- Add movie section -->
   <section id="add-movie">
     <h2>Add Movie</h2>
-
-    <form id="add-form">
-      <div class="add-row">
-        <label for="addId">ID</label>
-        <input type="text" name="id" id="addId" readonly>
-      </div>
-      <div class="add-row">
-        <label for="addTitle">Title</label>
-        <input type="text" name="title" id="addTitle" placeholder="Movie title">
-      </div>
-      <div class="add-row">
-        <label for="addYear">Year</label>
-        <input type="text" name="year" id="addYear" placeholder="Release year">
-      </div>
-      <div class="add-row">
-        <label for="addRating">Rating</label>
-        <input type="text" name="rating" id="addRating" placeholder="Movie Rating">
-      </div>
-      <button type="button" name="submit" onclick="addMovieClick()">Add movie</button>
-    </form>
+    
+    <div class="content-container">
+      <form id="add-form">
+        <div class="add-row">
+          <label for="addId">ID</label>
+          <input type="text" name="id" id="addId" readonly>
+        </div>
+        <div class="add-row">
+          <label for="addTitle">Title</label>
+          <input type="text" name="title" id="addTitle" placeholder="Movie title">
+        </div>
+        <div class="add-row">
+          <label for="addYear">Year</label>
+          <input type="text" name="year" id="addYear" placeholder="Release year">
+        </div>
+        <div class="add-row">
+          <label for="addRating">Rating</label>
+          <input type="text" name="rating" id="addRating" placeholder="Movie Rating">
+        </div>
+        <button type="button" name="submit" onclick="addMovieClick()">Add movie</button>
+      </form>
+    </div>
   </section>
   <!-- end add movie -->
 
