@@ -77,6 +77,20 @@ function addMovieClick() {
   let year = formElements['year'].value;
   let rating = formElements['rating'].value;
 
+  // Input conditions checking for invalid values
+  // Empty input fields
+  // Non numbers in year and rating field
+  // Numbers outside of 0-10 rating range
+  if (title == "" || year == "" || rating == "") {
+    return alert("Please fill out all boxes");
+  } 
+  else if (isNaN(year) || isNaN(rating)) {
+    return alert("Please input numbers for year and rating");
+  } 
+  else if (rating > 10 || rating < 0) {
+    return alert("Rating must be between 0 and 10")
+  }
+  
   // calls addMovie using input values as parameters
   movieList.addMovie(Number(id), title, Number(year), Number(rating));
 
