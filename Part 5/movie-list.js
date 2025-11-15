@@ -211,7 +211,7 @@ class MovieList {
 
   // Sort ID function
   // Displays the list by ID in ascending order
-  sortID() {
+  sortId() {
     // using a sort function that compares the ID values, and places them in ascending order
     this.movieArray.sort(function(a, b) {
       return a.id - b.id;

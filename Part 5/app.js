@@ -45,7 +45,7 @@ function idSearchClick() {
 // Upon clicking the Refresh button
 function refreshClick() {
   // calls sort ID for current movie list class
-  movieList.sortID();
+  movieList.sortId();
 }
 
 // Upon clicking the Sort by A-Z button
