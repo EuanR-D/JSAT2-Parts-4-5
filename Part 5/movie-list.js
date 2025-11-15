@@ -129,9 +129,10 @@ class MovieList {
     
     // looping through each movie object from movie list array
     for (let movie of this.movieArray) {
-      // If input id matches current movie, pushes movie to new array
+      // If input id matches current movie, pushes movie to new array and exits loop
       if (movie.id == idNum) {
         searchList.push(movie);
+        break;
       } 
       
     }

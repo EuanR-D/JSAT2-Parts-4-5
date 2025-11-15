@@ -27,7 +27,7 @@ h2 {
   font-weight: 500;
 }
 
-th, label {
+th, label, button, p {
   font-size: 1.3em;
 }
 
@@ -35,9 +35,6 @@ td, input {
   font-size: 1.1em;
 }
 
-button {
-  font-size: 1.3em;
-}
 
 
 
@@ -46,7 +43,7 @@ body {
   background-color: var(--arsenic);
 }
 
-h1, h2, button {
+h1, h2, button, p {
   color: var(--paleViolet);
 }
 
@@ -123,7 +120,7 @@ h1 {
 }
 
 section {
-  margin-bottom: 5dvh;
+  margin-bottom: 4dvh;
 }
 
 input {
@@ -236,3 +233,10 @@ th:nth-child(4), th:nth-child(3) {
   border: none;
 }
 
+/* ####### Footer ####### */
+footer div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 1dvh;
+}
