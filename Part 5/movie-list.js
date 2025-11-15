@@ -2,11 +2,21 @@
 // Desc: movie list class and methods for JSAT2 Part 5
 // Author: Euan Renfrey-Douglas
 // Date created: 2025-11-11
-// Last modified: 2025-11-11
+// Last modified: 2025-11-14
 
 // Methods
-//
-
+// movieRow - Generates 1 movie row on DOM
+// genMovieList - calls movieRow for each movie in array
+// removeElements - removes all elements from display
+// searchTitle - Searches for matching characters in movie title and calls genMovieSearchList
+// searchId - Searches for matching num in movie Id and calls genMovieSearchList
+// update - calls removeElements, generates new display with genMovieList, and calls updateInputId
+// sortAZ - Sorts array display by title a - z
+// sortZA - Sorts array display by title z - a
+// sortRating - Sorts array display by rating desc
+// sortId - Sorts array display by Id asc
+// addMovie - Pushes new movie to array from input values
+// updateInputId - Updates Id input to 1 higher than current array length
 
 // Movie list class
 class MovieList {
@@ -99,9 +109,13 @@ class MovieList {
       if (movie.title.toLowerCase().includes(titleStr.toLowerCase())) {
         // If partial/full input matches title, pushes movie to new array
         searchList.push(movie);
-      }
+      } 
     }
-    
+
+    // Returns alert if no movie is found
+    if (searchList.length == 0) {
+      return alert("Movie not found");
+    }
     
     // Passes final search array to function to display it
     this.genMovieSearchList(searchList);
@@ -115,11 +129,16 @@ class MovieList {
     
     // looping through each movie object from movie list array
     for (let movie of this.movieArray) {
-      // If input id matches current movie, pushes movie to new array
+      // If input id matches current movie, pushes movie to new array and exits loop
       if (movie.id == idNum) {
         searchList.push(movie);
-      }
+        break;
+      } 
       
+    }
+    // Returns alert if no movie is found
+    if (searchList.length == 0) {
+      return alert("Movie not found");
     }
     
     // Passes final search array to function to display it
@@ -192,7 +211,7 @@ class MovieList {
 
   // Sort ID function
   // Displays the list by ID in ascending order
-  sortID() {
+  sortId() {
     // using a sort function that compares the ID values, and places them in ascending order
     this.movieArray.sort(function(a, b) {
       return a.id - b.id;

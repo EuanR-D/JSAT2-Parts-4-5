@@ -2,7 +2,7 @@
 // Desc: contains default array and lets methods interact with DOM. For JSAT2 Part 5
 // Author: Euan Renfrey-Douglas
 // Date created: 2025-11-11
-// Last modified: 2025-11-11
+// Last modified: 2025-11-14
 
 
 
@@ -45,7 +45,7 @@ function idSearchClick() {
 // Upon clicking the Refresh button
 function refreshClick() {
   // calls sort ID for current movie list class
-  movieList.sortID();
+  movieList.sortId();
 }
 
 // Upon clicking the Sort by A-Z button
@@ -76,6 +76,20 @@ function addMovieClick() {
   let title = formElements['title'].value;
   let year = formElements['year'].value;
   let rating = formElements['rating'].value;
+
+  // Input conditions checking for invalid values
+  // Empty input fields
+  // Non numbers in year and rating field
+  // Numbers outside of 0-10 rating range
+  if (title == "" || year == "" || rating == "") {
+    return alert("Please fill out all boxes");
+  } 
+  else if (isNaN(year) || isNaN(rating)) {
+    return alert("Please input numbers for year and rating");
+  } 
+  else if (rating > 10 || rating < 0) {
+    return alert("Rating must be between 0 and 10")
+  }
 
   // calls addMovie using input values as parameters
   movieList.addMovie(Number(id), title, Number(year), Number(rating));
